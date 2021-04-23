@@ -1,17 +1,25 @@
 // Imports
 var express = require('express');
+var bodyParser = require('body-parser');
+var apiRouter = require('./apiRouter').router;
 
 // Instantiate server
 var server = express();
 
+//Body Parser configuration
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(bodyParser.json());
+
 // Configure routes
 server.get('/', function (req,res) {
     res.setHeader('Content-Type', 'text/html');
-    res.status(200).send('<h1>Bonjour sur mon sferveur</h1>')
+    res.status(200).send('<h1>Bonjour sur mon serveur</h1>')
 });
+
+server.use('/api/', apiRouter);
 
 // Launch server
 
-server.listen(3636, function() {
-    console.log('Server running on 3636')
+server.listen(8080, function() {
+    console.log('Server running on 8080')
 });
