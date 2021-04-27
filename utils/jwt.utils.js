@@ -1,7 +1,7 @@
 // Imports
 var jwt = require('jsonwebtoken');
 
-const JWT_SIGN_SECRET = '<JWT_SIGN_TOKEN>';
+const JWT_SIGN_SECRET = '564regerg4bre64gbvre4gb654ergggbv5e4r';
 
 // Exported functions
 module.exports = {
